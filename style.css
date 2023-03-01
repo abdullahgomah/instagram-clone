@@ -1,0 +1,285 @@
+* {
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box; 
+    transition: all .3s ease-in-out; 
+    font-family: 'Cairo', sans-serif;
+}
+
+a {
+    color: #0093F2;
+    text-decoration: none;
+}
+
+:root {
+    --main-background: #212121; 
+}
+
+body {
+    background: var(--main-background); 
+    background: black;
+
+}
+
+.container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: " sidebar main main main main main main main main summary summary summary summary";
+}
+
+.sidebar {
+    /* display: grid; */
+    grid-area: sidebar;
+    height: 100vh;
+    /* position: fixed;  */
+    padding: 1rem; 
+    line-height: 2.6;
+    padding-top: 2.5rem;
+}
+
+.links li {
+    list-style: none;
+    margin: 1rem 0; 
+}
+
+.links .list-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem; 
+    color: white; 
+    text-decoration: none;
+}
+
+.links .list-item div:first-child {
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    height: 100%;
+}
+
+.links .list-item div:last-child {
+    font-weight: 600;
+}
+
+.profile-img {
+    height: 30px;
+    border-radius: 50%;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+
+.main-content {
+    grid-area: main;
+    height: 100%;
+}
+
+.main-content .stories {
+    display: flex;
+    width: fit-content; 
+    margin: 2rem auto;
+    gap: 1.5rem;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
+}
+
+.profile__name {
+    color: white; 
+    font-size: .8rem;
+}
+
+.profile__img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 3px solid #DD5214;
+}
+
+
+/* posts style */
+
+.posts {
+    margin: 1rem auto;
+}
+
+.post {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.post__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.post__header > div:first-child {
+    display: flex;
+    gap:1rem;
+    justify-content: center;
+}
+
+.post__profile__img__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post__profile__img {
+    height: 50px;
+    border:2px solid #DD5214;
+    border-radius: 50%;
+}
+
+.post__profile__name {
+    font-weight: bold;
+}
+
+.post__location {
+    font-size: .8rem;
+}
+
+.more i {
+    font-size: 1.2rem !important;
+}
+
+.post__content {
+    margin: 1rem 0;
+}
+
+.post__content img {
+    width: 500px;
+    max-width: 500px;
+}
+
+
+.post__footer .cta{
+    display: flex;
+    justify-content: space-between;
+}
+
+.post__footer .cta div:first-child {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.post__footer .cta a {
+    text-decoration: none;
+}
+
+
+
+/* suggestions style */
+.summary {
+    grid-area: summary;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.summary .profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.summary__profile__img__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary__profile__img {
+    height: 60px;
+    border-radius: 50%;
+}
+
+.summary .profile__name {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.profile__user {
+    color: white;
+    opacity: .8;
+}
+
+.suggestions {
+    color: white; 
+}
+
+.suggestions__header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.suggestions__header p:first-child {
+    font-size: 1.1rem;
+}
+
+.suggested__profiles {
+    /* background: red; */
+    margin-top: 1rem;
+}
+
+.suggested__profile {
+    display: flex;
+    gap:1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0 ;
+}
+
+.suggested__profile div:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.suggested__profile div:first-child img{
+    height: 50px ;
+    border-radius: 50%;
+}
+
+.suggested__profile div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* RESPONSIVE STANDARDS */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px; 
+    }
+}
+
+/* Medium */
+@media (min-width:992px ) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
